@@ -46,6 +46,35 @@ public class Arrays
 		return isum;
 	}
 
+	public void CountUnique(int[] arr)
+	{
+		int n = arr.Length;
+		        bool []visited = new bool[n];
+     
+       		
+        	for (int i = 0; i < n; i++)
+        	{
+     
+     	      
+        	    if (visited[i] == true)
+                	continue;
+     
+        	    int count = 1;
+            		for(int j = i + 1; j < n; j++)
+        	 	{
+       	         		if (arr[i] == arr[j])
+        	 		{
+               				visited[j] = true;
+                    			count++;
+                 		}
+            		}
+           		
+			 Console.WriteLine(arr[i] + "\tFrequency is\t" + count);
+        	}
+		
+	}
+
+
 
 	
 
