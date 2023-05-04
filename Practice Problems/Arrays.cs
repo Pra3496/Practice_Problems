@@ -76,7 +76,51 @@ public class Arrays
 
 
 
-	
+	public void CountFrequency(int[] arr)
+	{
+		
+
+		int[] Frequence = new int[arr.Length];
+		
+		for(int i = 0; i < arr.Length; i++)
+		{
+			for(int j = i+1; j < arr.Length; j++)
+			{
+				if(arr[i] > arr[j])
+				{
+					int temp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = temp; 
+				}
+			}
+		}
+
+		for(int i = 0; i < arr.Length; i++)
+		{
+			Frequence[i] = 1;
+
+			for(int j = i+1; j < arr.Length; j++)
+			{
+				if(arr[i] == arr[j])
+				{
+					Frequence[i] += 1;
+				}
+			}
+		}
+		Console.WriteLine("Frequency : ");
+		for(int i = 0; i < Frequence.Length; i++)
+		{
+			if(Frequence[i] > 1)
+			{
+				Console.WriteLine(arr[i]+" is "+Frequence[i]+" times in Array");
+			}
+		}
+
+		
+		
+		
+		
+	}
 
 
 	public static void Main(String[] args)
