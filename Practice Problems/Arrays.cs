@@ -121,6 +121,33 @@ public class Arrays
 		
 		
 	}
+	public void MaxAndMin(int[] arr)
+	{
+		int iMax = 0;
+		int iMin = 0;
+
+		for(int i = 0; i < arr.Length; i++)
+		{
+			for(int j = i+1; j < arr.Length; j++)
+			{
+				if(arr[i] > arr[j])
+				{
+					int temp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = temp; 
+				}
+			}
+		}
+		
+		iMax = arr[arr.Length-1];
+		iMin = arr[0];
+
+		Console.WriteLine("Maximum is {0} and Minimum is {1}",iMax,iMin);
+		
+		
+		
+		
+	}
 
 
 	public static void Main(String[] args)
@@ -133,7 +160,9 @@ public class Arrays
 
 		//count.CountFrequency(arr);
 
-		count.CountUnique(arr);
+		//count.CountUnique(arr);
+
+		count.MaxAndMin(arr);
 
 	}
 
